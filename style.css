@@ -1,12 +1,33 @@
 body {
     margin: 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: black;
     height: 100vh;
     color: white;
 }
+
+#players {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 30px 0px 30px;
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
+
+.players img {
+    margin: 10px;
+}
+
 
 .game {
     border: 2px solid white;
@@ -18,6 +39,7 @@ body {
     grid-template-rows: repeat(3, 1fr);
     gap: 0;
     box-sizing: border-box;
+    margin: 0;
 }
 
 .square {

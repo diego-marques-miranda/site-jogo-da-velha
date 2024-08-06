@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="players">
+        <div id="p1" class="players">
+            Player 1
+            <img src="images/o-80.png" alt="circle">
+        </div>
+
+        <div id="p2" class="players">
+            Player 2
+            <img src="images/x-80.png" alt="cross">
+        </div>
+    </div>
     <div class="game">
-        <div id="top-left" class="square"><img src="images/x-80.png" alt="cross"></div>
-        <div id="top" class="square"><img src="images/o-80.png" alt="circle"></div>
+        <div id="top-left" class="square"></div>
+        <div id="top" class="square"></div>
         <div id="top-right" class="square"></div>
         <div id="left" class="square"></div>
         <div id="center" class="square"></div>
@@ -19,5 +30,8 @@
         <div id="bottom-right" class="square"></div>
     </div>
 
+    <div id="result"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
