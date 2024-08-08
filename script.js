@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     function placePlay(square, play) {
+        
+        if (lock) {
+            return;
+        }
+
         const img = document.createElement('img');
 
         checkWin();
@@ -110,9 +115,24 @@ document.addEventListener('DOMContentLoaded', function(){
         if (play % 2 != 0) {
             img.setAttribute('src', 'images/x-80.png');
             crosses[squareNumber] = true;
+            img.classList.add('fade-in');
+
+            img.offsetHeight;
+
+            requestAnimationFrame(() => {
+                img.classList.add('visible');
+            });
+
         } if (play % 2 == 0) {
             img.setAttribute('src', 'images/o-80.png');
             circles[squareNumber] = true;
+            img.classList.add('fade-in');
+            img.offsetHeight;
+
+            requestAnimationFrame(() => {
+                img.classList.add('visible');
+            });
+
         } else {
             console.log("Error. Invalid player");
         }
@@ -129,7 +149,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topLeft.style.backgroundColor = 'green';
+            top.style.backgroundColor = 'green';
+            topRight.style.backgroundColor = 'green';
+
             win.textContent = 'Player 1 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -138,7 +164,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topLeft.style.backgroundColor = 'green';
+            top.style.backgroundColor = 'green';
+            topRight.style.backgroundColor = 'green';
+
             win.textContent = 'Player 2 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -147,7 +179,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
-            win.textContent = 'Player 1 won';
+            left.style.backgroundColor = 'green';
+            center.style.backgroundColor = 'green';
+            right.style.backgroundColor = 'green';
+
+            win.textContent = 'Player 1 won';            
+            
+            lock = true;
 
             result.appendChild(win);
         }
@@ -156,7 +194,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            left.style.backgroundColor = 'green';
+            center.style.backgroundColor = 'green';
+            right.style.backgroundColor = 'green';
+
             win.textContent = 'Player 2 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -165,7 +209,12 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            bottomLeft.style.backgroundColor = 'green';
+            bottom.style.backgroundColor = 'green';
+            bottomRight.style.backgroundColor = 'green';
+
             win.textContent = 'Player 1 won';
+            lock = true;
 
             result.appendChild(win);
         }
@@ -174,7 +223,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            bottomLeft.style.backgroundColor = 'green';
+            bottom.style.backgroundColor = 'green';
+            bottomRight.style.backgroundColor = 'green';
+
             win.textContent = 'Player 2 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -183,7 +238,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topLeft.style.backgroundColor = 'green';
+            left.style.backgroundColor = 'green';
+            bottomLeft.style.backgroundColor = 'green';
+
             win.textContent = 'Player 1 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -192,7 +253,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            top.style.backgroundColor = 'green';
+            center.style.backgroundColor = 'green';
+            bottom.style.backgroundColor = 'green';
+
             win.textContent = 'Player 1 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -201,7 +268,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topRight.style.backgroundColor = 'green';
+            right.style.backgroundColor = 'green';
+            bottomRight.style.backgroundColor = 'green';
+
             win.textContent = 'Player 1 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -210,7 +283,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topLeft.style.backgroundColor = 'green';
+            left.style.backgroundColor = 'green';
+            bottomLeft.style.backgroundColor = 'green';
+
             win.textContent = 'Player 2 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -219,7 +298,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            top.style.backgroundColor = 'green';
+            center.style.backgroundColor = 'green';
+            bottom.style.backgroundColor = 'green';
+
             win.textContent = 'Player 2 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -228,7 +313,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topRight.style.backgroundColor = 'green';
+            right.style.backgroundColor = 'green';
+            bottomRight.style.backgroundColor = 'green';
+
             win.textContent = 'Player 2 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -237,7 +328,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topLeft.style.backgroundColor = 'green';
+            center.style.backgroundColor = 'green';
+            bottomRight.style.backgroundColor = 'green';
+
             win.textContent = 'Player 1 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -246,7 +343,14 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topRight.style.backgroundColor = 'green';
+            center.style.backgroundColor = 'green';
+            bottomLeft.style.backgroundColor = 'green';
+
+
             win.textContent = 'Player 1 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -255,7 +359,13 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topLeft.style.backgroundColor = 'green';
+            center.style.backgroundColor = 'green';
+            bottomRight.style.backgroundColor = 'green';
+
             win.textContent = 'Player 2 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
@@ -264,10 +374,18 @@ document.addEventListener('DOMContentLoaded', function(){
         {
             const win = document.createElement('p');
 
+            topRight.style.backgroundColor = 'green';
+            center.style.backgroundColor = 'green';
+            bottomLeft.style.backgroundColor = 'green';
+
             win.textContent = 'Player 2 won';
+
+            lock = true;
 
             result.appendChild(win);
         }
+
+
     }
 
 
